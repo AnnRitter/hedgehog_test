@@ -1,0 +1,52 @@
+@import './fonts.scss';
+@import './nullstyle.scss';
+
+
+
+
+.container {
+	max-width: 1792px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.header {
+	background-color: #EAEEEF;
+	padding-bottom: 202px;
+
+	&__wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__list {
+		display: flex;
+	}
+
+	&__item:not(:last-child) {
+		margin-right: 89px;
+	}
+
+	&__cart {
+		background-image: url(/images/basket.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 36px;
+		height: 33px;
+	}
+}
+
+.about {
+	background-color: #EAEEEF;
+
+	&__wrap {
+		text-align: center;
+	}
+
+	&__title {
+		text-transform: uppercase;
+		font-size: 60px;
+		letter-spacing: .2em;
+	}
+}
