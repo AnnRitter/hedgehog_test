@@ -1,7 +1,29 @@
 @import './fonts.scss';
 @import './nullstyle.scss';
 
+:root {
+	--white: #fff;
+	--yellow: #FFEDCD;
+	--light-green: #E2F0DF;
+	--light-grey: #C2CCCA;
+	--grey: #C4C4C4;
+	--dark-green: #70908B;
+	--main-text: #195557;
+	--black: #000;
+	--background-form: #EAEEEF;
 
+}
+
+@mixin button {
+	max-width: 328px;
+	width: 100%;
+	height: 69px;
+	border-radius: 40px;
+	background-color: var(--dark-green);
+	color: var(--white);
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+}
 
 
 .container {
@@ -11,10 +33,10 @@
 }
 
 .header {
-	background-color: #EAEEEF;
 	position: absolute;
 	width: 100%;
 	padding-top: 35px;
+	z-index: 1;
 
 	&__wrap {
 		display: flex;
@@ -41,23 +63,333 @@
 		width: 36px;
 		height: 33px;
 	}
+
+	&__phone {
+		position: relative;
+		font-family: 'Raleway', sans-serif;
+		font-size: 22px;
+		font-weight: 500;
+		color: var(--main-text);
+	}
+
+	&__phone::before {
+		content: '';
+		display: block;
+		background-image: url(/images/phone_logo.svg);
+		width: 69px;
+		height: 69px;
+		background-size: cover;
+		position: absolute;
+		top: -70%;
+		left: -30%;
+	}
 }
 
-.about {
+.info {
 	background-image: url(/images/Subtract.jpg);
 	width: 100%;
 	height: auto;
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding-top: 290px;
+	padding: 290px 0 390px;
+	position: relative;
+
+	&::before {
+		content: '';
+		background-image: url(/images/Ellipse_header_1.svg);
+		max-width: 524px;
+		width: 100%;
+		height: 524px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		position: absolute;
+		top: 0;
+	}
+
+	&::after {
+		content: '';
+		background-image: url(/images/Ellipse_header_2.svg);
+		max-width: 791px;
+		width: 100%;
+		height: 1500px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		position: absolute;
+		top: 20%;
+		right: 0;
+	}
 
 	&__wrap {
 		text-align: center;
 	}
 
 	&__title {
-		text-transform: uppercase;
-		font-size: 60px;
-		letter-spacing: .2em;
+		margin: 0 auto 19px;
 	}
+
+	&__subtitle {
+		font-size: 50px;
+		font-weight: 400;
+		text-transform: uppercase;
+		color: var(--dark-green);
+		margin-bottom: 18px;
+	}
+
+	&__content {
+		font-family: 'Raleway', sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		color: var(--dark-green);
+		margin-bottom: 34px;
+	}
+
+	&__buying {
+		@include button();
+	}
+}
+
+.about {
+	position: relative;
+
+	&::before {
+		content: '';
+		background-image: url(/images/hedgehog_left.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		max-width: 500px;
+		width: 100%;
+		height: 412px;
+		position: absolute;
+		top: -50%;
+	}
+
+	&::after {
+		content: '';
+		background-image: url(/images/hedgehog_right.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		max-width: 400px;
+		width: 100%;
+		height: 346px;
+		position: absolute;
+		top: -35%;
+		right: 0;
+	}
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		position: relative;
+		top: -240px;
+	}
+
+
+
+	&__item {
+		max-width: 191px;
+		width: 100%;
+		text-align: center;
+		position: relative;
+	}
+
+	&__item:nth-child(2) {
+		top: -30px;
+	}
+
+	&__item:not(:last-child) {
+		margin-right: 155px;
+	}
+
+	&__picture {
+		max-width: 152px;
+		width: 100%;
+		height: 152px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto 30px;
+		box-shadow: -8px -8px 20px #FFFFFF, 4px 4px 20px #C2CCCA;
+
+		&_yellow {
+			background-color: var(--yellow);
+		}
+
+		&_light-green {
+			background-color: var(--light-green);
+		}
+
+		&_dark-green {
+			background-color: var(--dark-green);
+		}
+	}
+
+
+	&__title {
+		font-size: 16px;
+		text-transform: uppercase;
+		color: var(--main-text);
+		margin-bottom: 8px;
+	}
+
+	&__content {
+		font-family: 'Raleway', sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		text-align: center;
+		color: var(--main-text);
+	}
+
+
+
+	&__sliders-wrap {
+		max-width: 1297px;
+		width: 100%;
+		margin: 0 auto 84px;
+		position: relative;
+	}
+
+	&__sliders {
+		max-width: 1184px;
+		width: 100%;
+	}
+
+	&__slide {
+		max-width: 570px;
+		width: 100%;
+		height: 410px;
+		border-radius: 25px;
+		display: flex;
+		justify-content: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		&_yellow {
+			background-image: url(/images/Subtract_yellow.png);
+
+		}
+
+		&_light-green {
+			background-image: url(/images/Subtract_green.png);
+		}
+	}
+
+	&__slide-wrap {
+		position: relative;
+		display: flex;
+		padding: 54px 0 0 59px;
+	}
+
+	&__info {
+		max-width: 182px;
+		width: 100%;
+	}
+
+	&__name {
+		font-size: 40px;
+		color: var(--main-text);
+		margin-bottom: 17px;
+	}
+
+	&__description {
+		font-family: 'Raleway', sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		color: var(--black);
+		margin-bottom: 7px;
+	}
+
+	&__old-price {
+		font-size: 20px;
+		color: var(--light-grey);
+		text-decoration: line-through;
+	}
+
+	&__current-price {
+		font-size: 40px;
+		color: var(--main-text);
+	}
+
+	&__photo {
+		max-width: 363px;
+		width: 100%;
+		height: 263px;
+		align-self: flex-end;
+	}
+
+	&__tooltip {
+		position: absolute;
+		top: 5%;
+		right: 5%;
+	}
+
+	&__add {
+		position: absolute;
+		bottom: 2%;
+		right: 2%;
+	}
+
+	&__button-prev::after {
+		content: '';
+		background-image: url(/images/arrow_left.svg);
+		width: 24px;
+		height: 24px;
+	}
+
+	&__button-next::after {
+		content: '';
+		background-image: url(/images/arrow_right.svg);
+		width: 24px;
+		height: 24px;
+	}
+
+
+}
+
+
+.apply {
+	margin-bottom: 95px;
+
+	&__form {
+		max-width: 1197px;
+		width: 100%;
+		height: 484px;
+		background-color: var(--background-form);
+		margin: 0 auto;
+		border-radius: 30px;
+		position: relative;
+	}
+
+	&__title {
+		font-size: 45px;
+		color: var(--main-text);
+		text-align: center;
+		padding-top: 39px;
+		padding-bottom: 30px;
+	}
+
+
+	&__buying {
+		@include button();
+		position: absolute;
+		bottom: -7%;
+		left: 37%;
+	}
+}
+
+
+
+
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
 }

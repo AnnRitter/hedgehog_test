@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Hedgehog</title>
+	<link rel="stylesheet" href="/css/libs/swiper-bundle.min.css">
 	<link rel="stylesheet" href="/css/style.min.css">
 </head>
 
@@ -13,7 +14,7 @@
 	<header class="header">
 		<div class="container">
 			<div class="header__wrap">
-				<img class="header__logo" src="/images/Logo.svg" alt="hedgehog logo">
+				<img class="header__logo" src="/images/Logo.svg" alt="Логотип">
 				<nav class="header__navigation">
 					<ul class="header__list">
 						<li class="header__item">
@@ -30,29 +31,129 @@
 						</li>
 					</ul>
 				</nav>
-				<div class="header__phone">
-					<a href="tel:+79655698998" class="header__phone-link">+7 (965) 569-89-98</a>
-				</div>
+				<a href="tel:+79655698998" class="header__phone">+7 (965) 569-89-98</a>
 				<button type="button" class="header__cart"></button>
 			</div>
 		</div>
 	</header>
 	<main>
-		<section class="about">
+		<section class="info">
 			<div class="container">
-				<div class="about__wrap">
-					<h1 class="about__title">Ёжики</h1>
-					<h2 class="about__subtitle">тоже любят молоко</h2>
-					<p class="about__content">Заведите себе ёжика. Он всегда выслушает, не будет мяукать в 5 утра и царапать вашу
+				<div class="info__wrap">
+					<h1 class="visually-hidden">Ёжики</h1>
+					<img class="info__title" src="/images/main_logo.svg" alt="Ёжики">
+					<h2 class="info__subtitle">тоже любят молоко</h2>
+					<p class="info__content">Заведите себе ёжика. Он всегда выслушает, не будет мяукать в 5 утра и царапать вашу
 						мебель.</p>
-					<button type="button" class="about__buying">Купить ёжика</button>
+					<button type="button" class="info__buying">Купить ёжика</button>
 				</div>
 			</div>
+		</section>
+
+		<section class="about">
+			<ul class="about__list">
+				<li class="about__item">
+					<div class="about__picture about__picture_yellow">
+						<img src="/images/hedgehog.svg" alt="" class="about__svg">
+					</div>
+					<p class="about__title">разведение ежиков</p>
+					<p class="about__content">Собственная ферма, уход и содержание</p>
+				</li>
+				<li class="about__item">
+					<div class="about__picture about__picture_light-green">
+						<img src="/images/syringe.svg" alt="" class="about__svg">
+					</div>
+					<p class="about__title">здоровье</p>
+					<p class="about__content">Всегда прививаем и вовремя обследуем ваших будущих питомцев</p>
+				</li>
+				<li class="about__item">
+					<div class="about__picture about__picture_dark-green">
+						<img src="/images/heart.svg" alt="" class="about__svg">
+					</div>
+					<p class="about__title">любовь и забота</p>
+					<p class="about__content">Каждому ежику мы дарим много внимания</p>
+				</li>
+			</ul>
+
+			<div class="about__sliders-wrap">
+				<div class="swiper about__sliders">
+
+					<div class="swiper-wrapper about__wrap">
+
+						<div class="swiper-slide about__slide about__slide_yellow">
+							<div class="about__slide-wrap">
+								<div class="about__info">
+									<p class="about__name">Ежик “Евгений”</p>
+									<p class="about__description">Очень любит сладости. Маленький сладкоежка=) Мы называем его так между
+										собой. Ручной, любит внимаение </p>
+									<p class="about__old-price">3 000 ₽</p>
+									<p class="about__current-price">1 500 ₽</p>
+								</div>
+								<img class="about__photo" src="/images/Eugene.png" alt="">
+								<img class="about__tooltip" src="/images/tooltip.svg" alt="">
+								<img class="about__add" src="/images/plus.svg" alt="">
+							</div>
+						</div>
+						<div class="swiper-slide about__slide about__slide_light-green">
+							<div class="about__slide-wrap">
+								<div class="about__info">
+									<p class="about__name">Ежик “Максим”</p>
+									<p class="about__description">Немного игривый и задорный характер этого друга никого не оставит
+										равнодушным!</p>
+									<p class="about__old-price">5 000 ₽</p>
+									<p class="about__current-price">2 500 ₽</p>
+								</div>
+								<img class="about__photo" src="/images/Maksim.png" alt="">
+								<img class="about__tooltip" src="/images/tooltip.svg" alt="">
+								<img class="about__add" src="/images/plus.svg" alt="">
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="swiper-button-prev about__button-prev"></div>
+				<div class="swiper-button-next about__button-next"></div>
+			</div>
+		</section>
+		<section class="apply">
+			<form class="apply__form" action="">
+				<h2 class="apply__title">Заполните заявку и мы забронируем для Вас нового друга</h2>
+				<div class="apply__target">
+					<input type="radio" id="target-1">
+					<label for="target-1">хочу ёжика для себя</label>
+					<input type="radio" id="target-2">
+					<label for="target-2">хочу ёжика для детей</label>
+					<input type="radio" id="target-3">
+					<label for="target-3">хочу ёжика для разведения</label>
+				</div>
+				<div class="apply__number">
+					<input type="radio" id="number-1">
+					<label for="number-1">Мне нужен 1-2 ёжика</label>
+					<input type="radio" id="number-2">
+					<label for="number-2">Мне нужны 3-4 ёжика</label>
+					<input type="radio" id="number-3">
+					<label for="number-3">Мне нужны 3 и более ёжиков</label>
+					<input type="radio" id="number-4">
+					<label for="number-4">Пока присматриваюсь</label>
+				</div>
+				<div class="apply__personal-data">
+					<input type="text" name="name" id="name">
+					<input type="tel" name="tel" id="tel">
+					<input type="email" name="email" id="email">
+					<input type="text" name="text" id="text">
+				</div>
+				<button class="apply__buying">Купить ёжика</button>
+			</form>
 		</section>
 	</main>
 	<footer class="footer">
 
 	</footer>
+
+	<script src="/js/libs/swiper-bundle.min.js"></script>
+	<script src="/js/app.min.js"></script>
+
 </body>
 
 </html>
