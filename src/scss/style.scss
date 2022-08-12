@@ -12,7 +12,9 @@
 
 .header {
 	background-color: #EAEEEF;
-	padding-bottom: 202px;
+	position: absolute;
+	width: 100%;
+	padding-top: 35px;
 
 	&__wrap {
 		display: flex;
@@ -22,6 +24,10 @@
 
 	&__list {
 		display: flex;
+	}
+
+	&__item {
+		text-transform: uppercase;
 	}
 
 	&__item:not(:last-child) {
@@ -38,7 +44,12 @@
 }
 
 .about {
-	background-color: #EAEEEF;
+	background-image: url(/images/Subtract.jpg);
+	width: 100%;
+	height: auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 290px;
 
 	&__wrap {
 		text-align: center;
