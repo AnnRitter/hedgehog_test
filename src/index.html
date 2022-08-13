@@ -15,19 +15,19 @@
 		<div class="container">
 			<div class="header__wrap">
 				<img class="header__logo" src="/images/Logo.svg" alt="Логотип">
-				<nav class="header__navigation">
-					<ul class="header__list">
-						<li class="header__item">
-							<a href="" class="header__link">Каталог</a>
+				<nav class="navigation">
+					<ul class="header__navigation navigation__list">
+						<li class="header__item navigation__item">
+							<a href="" class="header__link navigation__link">Каталог</a>
 						</li>
-						<li class="header__item">
-							<a href="" class="header__link">о нас</a>
+						<li class="header__item navigation__item">
+							<a href="" class="header__link navigation__link">о нас</a>
 						</li>
-						<li class="header__item">
-							<a href="" class="header__link">контакты</a>
+						<li class="header__item navigation__item">
+							<a href="" class="header__link navigation__link">контакты</a>
 						</li>
-						<li class="header__item">
-							<a href="" class="header__link">галерея</a>
+						<li class="header__item navigation__item">
+							<a href="" class="header__link navigation__link">галерея</a>
 						</li>
 					</ul>
 				</nav>
@@ -117,38 +117,79 @@
 			</div>
 		</section>
 		<section class="apply">
-			<form class="apply__form" action="">
-				<h2 class="apply__title">Заполните заявку и мы забронируем для Вас нового друга</h2>
-				<div class="apply__target">
-					<input type="radio" id="target-1">
-					<label for="target-1">хочу ёжика для себя</label>
-					<input type="radio" id="target-2">
-					<label for="target-2">хочу ёжика для детей</label>
-					<input type="radio" id="target-3">
-					<label for="target-3">хочу ёжика для разведения</label>
+			<div class="container">
+				<form class="apply__form" action="">
+					<h2 class="apply__title">Заполните заявку и мы забронируем для Вас нового друга</h2>
+					<div class="apply__target">
+						<input type="radio" id="target-1">
+						<label for="target-1">хочу ёжика для себя</label>
+						<input type="radio" id="target-2">
+						<label for="target-2">хочу ёжика для детей</label>
+						<input type="radio" id="target-3">
+						<label for="target-3">хочу ёжика для разведения</label>
+					</div>
+					<div class="apply__number">
+						<input type="radio" id="number-1">
+						<label for="number-1">Мне нужен 1-2 ёжика</label>
+						<input type="radio" id="number-2">
+						<label for="number-2">Мне нужны 3-4 ёжика</label>
+						<input type="radio" id="number-3">
+						<label for="number-3">Мне нужны 3 и более ёжиков</label>
+						<input type="radio" id="number-4">
+						<label for="number-4">Пока присматриваюсь</label>
+					</div>
+					<div class="apply__personal-data">
+						<input type="text" name="name" id="name">
+						<input type="tel" name="tel" id="tel">
+						<input type="email" name="email" id="email">
+						<input type="text" name="text" id="text">
+					</div>
+					<button class="apply__buying">Купить ёжика</button>
+				</form>
+				<div class="apply__sale">
+					<p class="apply__rests">У наc осталось еще: 25 ёжиков</p>
+					<p class="apply__sale-period">Торопитесь! Акция действует до 26. 02. 2023</p>
 				</div>
-				<div class="apply__number">
-					<input type="radio" id="number-1">
-					<label for="number-1">Мне нужен 1-2 ёжика</label>
-					<input type="radio" id="number-2">
-					<label for="number-2">Мне нужны 3-4 ёжика</label>
-					<input type="radio" id="number-3">
-					<label for="number-3">Мне нужны 3 и более ёжиков</label>
-					<input type="radio" id="number-4">
-					<label for="number-4">Пока присматриваюсь</label>
-				</div>
-				<div class="apply__personal-data">
-					<input type="text" name="name" id="name">
-					<input type="tel" name="tel" id="tel">
-					<input type="email" name="email" id="email">
-					<input type="text" name="text" id="text">
-				</div>
-				<button class="apply__buying">Купить ёжика</button>
-			</form>
+			</div>
 		</section>
 	</main>
 	<footer class="footer">
-
+		<div class="container">
+			<div class="footer__wrap">
+				<img src="/images/logo_white.svg" alt="" class="footer__logo">
+				<nav class="navigation">
+					<ul class=" footer__navigation navigation__list">
+						<li class="navigation__item">
+							<a href="" class="navigation__link">Каталог</a>
+						</li>
+						<li class="navigation__item">
+							<a href="" class="navigation__link">о нас</a>
+						</li>
+						<li class="navigation__item">
+							<a href="" class="navigation__link">контакты</a>
+						</li>
+						<li class="navigation__item">
+							<a href="" class="navigation__link">галерея</a>
+						</li>
+					</ul>
+				</nav>
+				<ul class="footer__links">
+					<li class="footer__link">
+						<a class="footer__ref" href="/images/footer_instagram.svg"></a>
+					</li>
+					<li class="footer__link">
+						<a class="footer__ref" href="/images/footer_facebook.svg"></a>
+					</li>
+					<li class="footer__link">
+						<a class="footer__ref" href="/images/footer_twitter.svg"></a>
+					</li>
+				</ul>
+				<a href="tel:+79655698998" class="footer__phone">+7 (965) 569-89-98</a>
+			</div>
+			<p class="footer__rights">Все права защищены.<br>
+				Указанная стоимость товаров и условия их приобретения действительны на текущую дату.</p>
+			
+		</div>
 	</footer>
 
 	<script src="/js/libs/swiper-bundle.min.js"></script>
