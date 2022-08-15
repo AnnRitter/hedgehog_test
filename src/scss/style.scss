@@ -25,6 +25,12 @@
 	font-size: 14px;
 }
 
+@mixin phone {
+	font-family: 'Raleway', sans-serif;
+	font-size: 22px;
+	font-weight: 500;
+}
+
 
 .container {
 	max-width: 1792px;
@@ -44,6 +50,14 @@
 		align-items: center;
 	}
 
+	&__logo {
+		margin-right: 573px;
+	}
+
+	&__navigation {
+		margin-right: 132px;
+	}
+
 	&__cart {
 		background-image: url(/images/basket.svg);
 		background-repeat: no-repeat;
@@ -53,11 +67,10 @@
 	}
 
 	&__phone {
+		@include phone();
 		position: relative;
-		font-family: 'Raleway', sans-serif;
-		font-size: 22px;
-		font-weight: 500;
 		color: var(--main-text);
+		// margin-right: 82px;
 	}
 
 	&__phone::before {
@@ -305,10 +318,77 @@
 		align-self: flex-end;
 	}
 
-	&__tooltip {
+
+	&__tooltip-icon {
 		position: absolute;
 		top: 5%;
 		right: 5%;
+	}
+
+	&__tooltip-block {
+		position: absolute;
+		top: 17%;
+		right: -11%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: 220px;
+		width: 100%;
+		height: 88px;
+		background-color: var(--main-text);
+		z-index: 5;
+		visibility: hidden;
+	}
+
+	&__tooltip-block::before {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 14.5px solid transparent;
+		border-right: 14.5px solid transparent;
+		border-bottom: 9px solid var(--main-text);
+		transform: translateY(-48px);
+		// top: 0;
+		// left: 50%;
+	}
+
+	&__tooltip-text, 
+	&__tooltip-likes {
+		font-family: 'Raleway', sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		color: var(--white);
+		text-transform: lowercase;
+		position: relative;
+	}
+
+	&__tooltip-text {
+		margin-right: 55px;
+		padding-left: 26px;
+	}
+
+	&__tooltip-text::before {
+		content: '';
+		background-image: url(/images/solid.svg);
+		width: 26px;
+		height: 26px;
+		position: absolute;
+		top: -23%;
+		left: -6%;
+	}
+
+	&__tooltip-likes::before {
+		content: '';
+		background-image: url(/images/like.svg);
+		width: 22px;
+		height: 22px;
+		position: absolute;
+		top: -17%;
+		left: -96%;
+	}
+	&__tooltip:hover &__tooltip-block {
+		visibility: visible;
 	}
 
 	&__add {
@@ -349,13 +429,148 @@
 
 	}
 
+	&__form-wrap {
+		padding: 39px 50px 79px;
+	}
+
 	&__title {
 		font-size: 45px;
 		color: var(--main-text);
 		text-align: center;
-		padding-top: 39px;
-		padding-bottom: 30px;
+		margin-bottom: 30px;
 	}
+
+	&__radio {
+		display: flex;
+		margin-bottom: 43px;
+	}
+
+	&__target {
+		display: flex;
+		margin-right: 77px;
+	}
+
+
+	&__target-input,
+	&__number-input {
+		position: absolute;
+		z-index: -1;
+		opacity: 0;
+	}
+
+	&__target-input+label {
+		user-select: none;
+		max-width: 199px;
+		width: 100%;
+		height: 49px;
+		border: 2px solid var(--dark-green);
+		border-radius: 30px;
+		font-size: 14px;
+		color: var(--dark-green);
+		background-color: var(--white);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 16px 27px;
+	}
+
+	&__target-wrap:not(:last-child) {
+		margin-right: 14px;
+	}
+
+	&__target-input:checked+label {
+		background-color: var(--dark-green);
+		color: var(--white);
+	}
+
+	&__number {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 14px 53px;
+	}
+
+	&__number-input+label {
+		font-size: 14px;
+		color: var(--dark-green);
+		position: relative;
+		padding-left: 21px;
+	}
+
+	&__number-input+label::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 14px;
+		height: 14px;
+		border: 1px solid var(--dark-green);
+		background-color: var(--white);
+		border-radius: 50%;
+	}
+
+	&__number-input:checked+label::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: url(/images/radio_checked.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 14px;
+		height: 14px;
+	}
+
+	&__personal-data {
+		display: grid;
+		grid-template-areas:
+			"name phone email"
+			"comment comment comment";
+		gap: 20px;
+
+	}
+
+	&__input-name {
+		grid-area: name;
+	}
+
+	&__input-tel {
+		grid-area: phone;
+	}
+
+	&__input-email {
+		grid-area: email;
+	}
+
+	&__input-text {
+		grid-area: comment;
+	}
+
+	&__personal-input {
+		border-radius: 8px;
+		padding: 23px 27px;
+	}
+
+	&__personal-input:not(:last-child) {
+		max-width: 352px;
+		width: 100%;
+		height: 62px;
+	}
+
+	&__personal-input:last-child {
+		max-width: 1096px;
+		width: 100%;
+		height: 108px;
+	}
+
+	&__personal-input::placeholder {
+		font-family: 'Raleway', sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		color: var(--main-text);
+	}
+
+
 
 
 	&__buying {
@@ -396,23 +611,57 @@
 		font-weight: 400;
 		color: var(--main-text);
 	}
+
 }
 
 .footer {
 	background-color: var(--dark-green);
 	padding-top: 49px;
 
+	&__wrap {
+		display: flex;
+		align-items: center;
+		margin-bottom: 24px;
+	}
+
+	&__logo {
+		padding-right: 610px;
+	}
+
 	&__navigation {
 		color: var(--white);
+		padding-right: 99px;
+	}
+
+	&__links {
+		display: flex;
+		margin-right: 71px;
 	}
 
 	&__link {
 		width: 40px;
 		height: 40px;
 	}
-	&__ref {
-		width: 40px;
-		height: 40px;
+
+	&__icon {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__icon:not(:last-child) {
+		margin-right: 13px;
+	}
+
+	&__phone {
+		@include phone();
+		color: var(--white);
+	}
+
+	&__rights {
+		font-family: 'Raleway', sans-serif;
+		font-size: 9px;
+		font-weight: 400;
+		color: var(--white);
 	}
 }
 
