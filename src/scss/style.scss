@@ -58,6 +58,60 @@
 		margin-right: 132px;
 	}
 
+	&__item {
+		position: relative;
+	}
+
+	&__item:first-child::before {
+		content: '';
+		position: absolute;
+		top: 15%;
+		left: -20%;
+		background-image: url(/images/triangle_right.svg);
+		width: 10px;
+		height: 10px;
+		transition: all .3s ease;
+
+	}
+
+	&__item:first-child:hover &__link {
+		border-bottom: 1px solid var(--main-text);
+	}
+
+	&__item:first-child:hover::before {
+		transform: rotate(90deg);
+	}
+	&__item:first-child:hover &__sublist {
+		visibility: visible;
+	}
+
+
+	&__link {
+		color: var(--main-text);
+	}
+
+	&__sublist {
+		position: absolute;
+		transform: translate(-17px, 14px);
+		padding: 19px 48px 21px 24px;
+		background-color: var(--white);
+		border-radius: 8px;
+		box-shadow: 4px 4px 20px 0 var(--light-grey);
+		visibility: hidden;
+	}
+
+	&__subitem {
+		color: var(--main-text);
+	}
+
+	&__subitem:not(:last-child) {
+		margin-bottom: 19px;
+	}
+
+	&__sublink:hover { 
+		border-bottom: 1px solid var(--main-text);
+	}
+
 	&__cart {
 		background-image: url(/images/basket.svg);
 		background-repeat: no-repeat;
@@ -353,7 +407,7 @@
 		// left: 50%;
 	}
 
-	&__tooltip-text, 
+	&__tooltip-text,
 	&__tooltip-likes {
 		font-family: 'Raleway', sans-serif;
 		font-size: 14px;
@@ -387,6 +441,7 @@
 		top: -17%;
 		left: -96%;
 	}
+
 	&__tooltip:hover &__tooltip-block {
 		visibility: visible;
 	}
