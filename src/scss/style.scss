@@ -838,60 +838,72 @@
 	}
 }
 
-@media (max-width: 320px) {
-	.header {
-
-
-		&__logo {
-			width: 56px;
-			height: 26px;
-		}
-
-		&__phone {
-			display: block;
-		}
-
-		&__phone-logo {
-			width: 35px;
-			height: 35px;
-			margin-right: 13px;
-		}
-
-		&__phone-logo::before {
-			width: 13px;
-			height: 11px;
-		}
-
-		&__list,
-		&__phone-link {
-			display: none;
-		}
-
-		&__cart {
-			width: 32px;
-			height: 26px;
-		}
-
-		&__burger-lines,
-		&__burger-menu {
-			display: block;
-		}
-
-
+@media (max-width: 1024px) {
+	* {
+		background-color: #000;
 	}
 
-	.info {
-		background-image: url(/images/Subtract_small.jpg);
-		height: 406px;
-
-		&::before,
-		&::after {
-			display: none;
-		}
-
-		&__title {
-			width: 202px;
-			height: 44px;
+	.about {
+		&__item:not(:last-child) {
+			margin-right: 50px;
 		}
 	}
 }
+
+// @media (max-width: 320px) {
+// 	.header {
+
+
+// 		&__logo {
+// 			width: 56px;
+// 			height: 26px;
+// 		}
+
+// 		&__phone {
+// 			display: block;
+// 		}
+
+// 		&__phone-logo {
+// 			width: 35px;
+// 			height: 35px;
+// 			margin-right: 13px;
+// 		}
+
+// 		&__phone-logo::before {
+// 			width: 13px;
+// 			height: 11px;
+// 		}
+
+// 		&__list,
+// 		&__phone-link {
+// 			display: none;
+// 		}
+
+// 		&__cart {
+// 			width: 32px;
+// 			height: 26px;
+// 		}
+
+// 		&__burger-lines,
+// 		&__burger-menu {
+// 			display: block;
+// 		}
+
+
+// 	}
+
+// 	.info {
+// 		background-image: url(/images/Subtract_small.jpg);
+// 		height: 406px;
+
+// 		&::before,
+// 		&::after {
+// 			display: none;
+// 		}
+
+// 		&__title {
+// 			width: 202px;
+// 			height: 44px;
+// 		}
+// 	}
+// }
