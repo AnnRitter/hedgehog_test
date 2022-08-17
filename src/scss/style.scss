@@ -21,7 +21,6 @@
 	border-radius: 40px;
 	background-color: var(--dark-green);
 	color: var(--white);
-	font-family: 'Raleway', sans-serif;
 	cursor: pointer;
 	box-shadow: -8px -8px 20px #fff, 4px 4px 20px #c2ccca;
 	position: relative;
@@ -52,6 +51,17 @@
 	&__wrap {
 		display: flex;
 		align-items: center;
+	}
+
+	&__burger-lines {
+		background-image: url(/images/burger.svg);
+		width: 25px;
+		height: 14px;
+	}
+
+	&__burger-lines,
+	&__burger-menu {
+		display: none;
 	}
 
 	&__navigation {
@@ -116,23 +126,40 @@
 	}
 
 	&__phone {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__phone-logo {
+		width: 69px;
+		height: 69px;
+		border-radius: 50%;
+		background: linear-gradient(90deg, rgba(176, 211, 206, 1) 0%, rgba(255, 237, 206, 1) 100%);
+		box-shadow: -8px -8px 20px #FFFFFF, 4px 4px 20px #C2CCCA;
+		margin-right: 20px;
+		position: relative;
+		cursor: pointer;
+	}
+
+	&__phone-logo::before {
+		content: '';
+		display: block;
+		background-image: url(/images/phone.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 32px;
+		height: 32px;
+		top: 50%;
+		margin: 0 auto;
+	}
+
+	&__phone-link {
 		@include phone();
 		position: relative;
 		color: var(--main-text);
-		padding-left: 69px;
+		// padding-left: 69px;
 		margin-right: 80px;
-	}
-
-	&__phone::before {
-		content: '';
-		display: block;
-		background-image: url(/images/phone_logo.svg);
-		width: 69px;
-		height: 69px;
-		background-size: cover;
-		position: absolute;
-		top: -70%;
-		left: 0;
 	}
 
 	&__cart {
@@ -143,6 +170,7 @@
 		height: 33px;
 		cursor: pointer;
 	}
+
 }
 
 .info {
@@ -206,34 +234,36 @@
 
 	&__buying {
 		@include button();
-	
-	
+
+
 	}
 
-	&__buying::before{
+	&__buying::before {
 		content: '';
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 335px;
 		height: 75px;
-		background: linear-gradient(90deg, rgba(176,211,206,1) 0%, rgba(255,237,206,1) 100%);
-		transform: translateX(-100%);	
+		background: linear-gradient(90deg, rgba(176, 211, 206, 1) 0%, rgba(255, 237, 206, 1) 100%);
+		transform: translateX(-100%);
 		transition: all .3s ease;
 	}
 
 	&__buying:hover {
 		color: var(--main-text);
-		
+
 	}
 
 	&__buying:hover::before {
 		transform: translateX(0);
-		
+
 	}
+
 	&__buying span {
 		z-index: 3;
 		position: relative;
+		font-family: 'Raleway', sans-serif;
 	}
 }
 
@@ -328,14 +358,14 @@
 
 .slider {
 	max-width: 1297px;
-		width: 100%;
-		margin: 0 auto 84px;
-		position: relative;
-	
+	width: 100%;
+	margin: 0 auto 84px;
+	position: relative;
+
 
 	&__outer-wrap {
 		max-width: 1184px;
-	width: 100%;
+		width: 100%;
 	}
 
 	&__slide {
@@ -652,30 +682,32 @@
 		left: 37%;
 	}
 
-	&__buying::before{
+	&__buying::before {
 		content: '';
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 335px;
 		height: 75px;
-		background: linear-gradient(90deg, rgba(176,211,206,1) 0%, rgba(255,237,206,1) 100%);
-		transform: translateX(-100%);	
+		background: linear-gradient(90deg, rgba(176, 211, 206, 1) 0%, rgba(255, 237, 206, 1) 100%);
+		transform: translateX(-100%);
 		transition: all .3s ease;
 	}
 
 	&__buying:hover {
 		color: var(--main-text);
-		
+
 	}
 
 	&__buying:hover::before {
 		transform: translateX(0);
-		
+
 	}
+
 	&__buying span {
 		z-index: 3;
 		position: relative;
+		font-family: 'Raleway', sans-serif;
 	}
 
 	&__sale {
@@ -687,7 +719,7 @@
 		color: var(--main-text);
 		position: relative;
 		width: fit-content;
-    margin: 0 auto 25px;
+		margin: 0 auto 25px;
 		padding-left: 50px;
 	}
 
@@ -695,7 +727,7 @@
 		content: '';
 		background-image: url(/images/footer_hedgehog.svg);
 		background-size: cover;
-	
+
 		width: 41px;
 		height: 41px;
 		position: absolute;
@@ -778,7 +810,7 @@
 	&__item:not(:last-child) {
 		margin-right: 89px;
 	}
- 
+
 	&__link {
 		font-size: 16px;
 	}
@@ -802,6 +834,64 @@
 		&__picture {
 			max-width: 120px;
 			height: 120px;
+		}
+	}
+}
+
+@media (max-width: 320px) {
+	.header {
+
+
+		&__logo {
+			width: 56px;
+			height: 26px;
+		}
+
+		&__phone {
+			display: block;
+		}
+
+		&__phone-logo {
+			width: 35px;
+			height: 35px;
+			margin-right: 13px;
+		}
+
+		&__phone-logo::before {
+			width: 13px;
+			height: 11px;
+		}
+
+		&__list,
+		&__phone-link {
+			display: none;
+		}
+
+		&__cart {
+			width: 32px;
+			height: 26px;
+		}
+
+		&__burger-lines,
+		&__burger-menu {
+			display: block;
+		}
+
+
+	}
+
+	.info {
+		background-image: url(/images/Subtract_small.jpg);
+		height: 406px;
+
+		&::before,
+		&::after {
+			display: none;
+		}
+
+		&__title {
+			width: 202px;
+			height: 44px;
 		}
 	}
 }
