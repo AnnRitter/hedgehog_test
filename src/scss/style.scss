@@ -22,19 +22,24 @@
 	background-color: var(--dark-green);
 	color: var(--white);
 	font-family: 'Raleway', sans-serif;
-	font-size: 14px;
+	cursor: pointer;
+	box-shadow: -8px -8px 20px #fff, 4px 4px 20px #c2ccca;
+	position: relative;
+	overflow: hidden;
+	transition: all .3s ease;
 }
 
 @mixin phone {
-	font-family: 'Raleway', sans-serif;
+	font-family: sans-serif;
 	font-size: 22px;
 	font-weight: 500;
 }
 
 
 .container {
-	max-width: 1792px;
+	max-width: 1772px;
 	width: 100%;
+	padding: 0 10px;
 	margin: 0 auto;
 }
 
@@ -46,20 +51,17 @@
 
 	&__wrap {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
 	}
 
-	&__logo {
-		margin-right: 573px;
-	}
-
 	&__navigation {
+		margin-left: auto;
 		margin-right: 132px;
 	}
 
 	&__item {
 		position: relative;
+		cursor: pointer;
 	}
 
 	&__item:first-child::before {
@@ -74,25 +76,30 @@
 
 	}
 
+	&__item:first-child:hover::before {
+		transform: rotate(90deg);
+	}
+
 	&__item:first-child:hover &__link {
 		border-bottom: 1px solid var(--main-text);
 	}
 
-	&__item:first-child:hover::before {
-		transform: rotate(90deg);
-	}
 	&__item:first-child:hover &__sublist {
 		visibility: visible;
 	}
 
-
-	&__link {
+	&__link,
+	&__subitem {
 		color: var(--main-text);
 	}
 
-	&__sublist {
+	&__submenu-wrap {
+		padding-top: 10px;
 		position: absolute;
-		transform: translate(-17px, 14px);
+		transform: translate(-17px, 7px);
+	}
+
+	&__sublist {
 		padding: 19px 48px 21px 24px;
 		background-color: var(--white);
 		border-radius: 8px;
@@ -100,31 +107,20 @@
 		visibility: hidden;
 	}
 
-	&__subitem {
-		color: var(--main-text);
-	}
-
 	&__subitem:not(:last-child) {
 		margin-bottom: 19px;
 	}
 
-	&__sublink:hover { 
+	&__s-link:hover {
 		border-bottom: 1px solid var(--main-text);
-	}
-
-	&__cart {
-		background-image: url(/images/basket.svg);
-		background-repeat: no-repeat;
-		background-size: contain;
-		width: 36px;
-		height: 33px;
 	}
 
 	&__phone {
 		@include phone();
 		position: relative;
 		color: var(--main-text);
-		// margin-right: 82px;
+		padding-left: 69px;
+		margin-right: 80px;
 	}
 
 	&__phone::before {
@@ -136,7 +132,16 @@
 		background-size: cover;
 		position: absolute;
 		top: -70%;
-		left: -30%;
+		left: 0;
+	}
+
+	&__cart {
+		background-image: url(/images/basket.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 36px;
+		height: 33px;
+		cursor: pointer;
 	}
 }
 
@@ -146,8 +151,10 @@
 	height: auto;
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center 100%;
 	padding: 290px 0 390px;
 	position: relative;
+
 
 	&::before {
 		content: '';
@@ -192,7 +199,6 @@
 
 	&__content {
 		font-family: 'Raleway', sans-serif;
-		font-size: 14px;
 		font-weight: 400;
 		color: var(--dark-green);
 		margin-bottom: 34px;
@@ -200,6 +206,34 @@
 
 	&__buying {
 		@include button();
+	
+	
+	}
+
+	&__buying::before{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 335px;
+		height: 75px;
+		background: linear-gradient(90deg, rgba(176,211,206,1) 0%, rgba(255,237,206,1) 100%);
+		transform: translateX(-100%);	
+		transition: all .3s ease;
+	}
+
+	&__buying:hover {
+		color: var(--main-text);
+		
+	}
+
+	&__buying:hover::before {
+		transform: translateX(0);
+		
+	}
+	&__buying span {
+		z-index: 3;
+		position: relative;
 	}
 }
 
@@ -211,8 +245,7 @@
 		background-image: url(/images/hedgehog_left.png);
 		background-size: contain;
 		background-repeat: no-repeat;
-		max-width: 500px;
-		width: 100%;
+		width: 20vw;
 		height: 412px;
 		position: absolute;
 		top: -50%;
@@ -223,8 +256,8 @@
 		background-image: url(/images/hedgehog_right.png);
 		background-size: contain;
 		background-repeat: no-repeat;
-		max-width: 400px;
-		width: 100%;
+		background-position-x: right;
+		width: 20vw;
 		height: 346px;
 		position: absolute;
 		top: -35%;
@@ -237,8 +270,6 @@
 		position: relative;
 		top: -240px;
 	}
-
-
 
 	&__item {
 		max-width: 191px;
@@ -279,7 +310,6 @@
 		}
 	}
 
-
 	&__title {
 		font-size: 16px;
 		text-transform: uppercase;
@@ -289,39 +319,34 @@
 
 	&__content {
 		font-family: 'Raleway', sans-serif;
-		font-size: 14px;
 		font-weight: 400;
 		text-align: center;
 		color: var(--main-text);
 	}
 
+}
 
-
-	&__sliders-wrap {
-		max-width: 1297px;
+.slider {
+	max-width: 1297px;
 		width: 100%;
 		margin: 0 auto 84px;
 		position: relative;
-	}
+	
 
-	&__sliders {
+	&__outer-wrap {
 		max-width: 1184px;
-		width: 100%;
+	width: 100%;
 	}
 
 	&__slide {
-		max-width: 570px;
-		width: 100%;
 		height: 410px;
 		border-radius: 25px;
 		display: flex;
-		justify-content: center;
 		background-size: contain;
 		background-repeat: no-repeat;
 
 		&_yellow {
 			background-image: url(/images/Subtract_yellow.png);
-
 		}
 
 		&_light-green {
@@ -348,7 +373,6 @@
 
 	&__description {
 		font-family: 'Raleway', sans-serif;
-		font-size: 14px;
 		font-weight: 400;
 		color: var(--black);
 		margin-bottom: 7px;
@@ -372,7 +396,6 @@
 		align-self: flex-end;
 	}
 
-
 	&__tooltip-icon {
 		position: absolute;
 		top: 5%;
@@ -382,7 +405,7 @@
 	&__tooltip-block {
 		position: absolute;
 		top: 17%;
-		right: -11%;
+		right: 3%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -402,7 +425,7 @@
 		border-left: 14.5px solid transparent;
 		border-right: 14.5px solid transparent;
 		border-bottom: 9px solid var(--main-text);
-		transform: translateY(-48px);
+		transform: translate(79px, -48px);
 		// top: 0;
 		// left: 50%;
 	}
@@ -410,7 +433,6 @@
 	&__tooltip-text,
 	&__tooltip-likes {
 		font-family: 'Raleway', sans-serif;
-		font-size: 14px;
 		font-weight: 400;
 		color: var(--white);
 		text-transform: lowercase;
@@ -465,10 +487,7 @@
 		width: 24px;
 		height: 24px;
 	}
-
-
 }
-
 
 .apply {
 	margin-bottom: 95px;
@@ -515,18 +534,19 @@
 
 	&__target-input+label {
 		user-select: none;
-		max-width: 199px;
-		width: 100%;
+		// max-width: 199px;
+		// width: 100%;
+		width: fit-content;
 		height: 49px;
 		border: 2px solid var(--dark-green);
 		border-radius: 30px;
-		font-size: 14px;
 		color: var(--dark-green);
 		background-color: var(--white);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 16px 27px;
+		padding: 16px 22px;
+		cursor: pointer;
 	}
 
 	&__target-wrap:not(:last-child) {
@@ -545,10 +565,10 @@
 	}
 
 	&__number-input+label {
-		font-size: 14px;
 		color: var(--dark-green);
 		position: relative;
 		padding-left: 21px;
+		cursor: pointer;
 	}
 
 	&__number-input+label::before {
@@ -604,6 +624,7 @@
 	&__personal-input {
 		border-radius: 8px;
 		padding: 23px 27px;
+		cursor: pointer;
 	}
 
 	&__personal-input:not(:last-child) {
@@ -620,19 +641,41 @@
 
 	&__personal-input::placeholder {
 		font-family: 'Raleway', sans-serif;
-		font-size: 14px;
 		font-weight: 400;
 		color: var(--main-text);
 	}
-
-
-
 
 	&__buying {
 		@include button();
 		position: absolute;
 		bottom: -7%;
 		left: 37%;
+	}
+
+	&__buying::before{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 335px;
+		height: 75px;
+		background: linear-gradient(90deg, rgba(176,211,206,1) 0%, rgba(255,237,206,1) 100%);
+		transform: translateX(-100%);	
+		transition: all .3s ease;
+	}
+
+	&__buying:hover {
+		color: var(--main-text);
+		
+	}
+
+	&__buying:hover::before {
+		transform: translateX(0);
+		
+	}
+	&__buying span {
+		z-index: 3;
+		position: relative;
 	}
 
 	&__sale {
@@ -643,17 +686,21 @@
 		font-size: 24px;
 		color: var(--main-text);
 		position: relative;
-		margin-bottom: 25px;
+		width: fit-content;
+    margin: 0 auto 25px;
+		padding-left: 50px;
 	}
 
 	&__rests::before {
 		content: '';
 		background-image: url(/images/footer_hedgehog.svg);
+		background-size: cover;
+	
 		width: 41px;
 		height: 41px;
 		position: absolute;
-		top: -20%;
-		left: 38%;
+		top: 0;
+		left: 0;
 		display: block;
 	}
 
@@ -662,7 +709,6 @@
 		width: 100%;
 		margin: 0 auto;
 		font-family: 'Raleway', sans-serif;
-		font-size: 14px;
 		font-weight: 400;
 		color: var(--main-text);
 	}
@@ -679,13 +725,11 @@
 		margin-bottom: 24px;
 	}
 
-	&__logo {
-		padding-right: 610px;
-	}
 
 	&__navigation {
 		color: var(--white);
-		padding-right: 99px;
+		margin-right: 99px;
+		margin-left: auto;
 	}
 
 	&__links {
@@ -717,14 +761,14 @@
 		font-size: 9px;
 		font-weight: 400;
 		color: var(--white);
+		padding-bottom: 30px;
 	}
 }
-
-
 
 .navigation {
 	&__list {
 		display: flex;
+		align-items: center;
 	}
 
 	&__item {
@@ -734,7 +778,10 @@
 	&__item:not(:last-child) {
 		margin-right: 89px;
 	}
-
+ 
+	&__link {
+		font-size: 16px;
+	}
 }
 
 .visually-hidden {
@@ -748,4 +795,13 @@
 	clip-path: inset(100%);
 	clip: rect(0 0 0 0);
 	overflow: hidden;
+}
+
+@media (max-width: 1440px) {
+	.about {
+		&__picture {
+			max-width: 120px;
+			height: 120px;
+		}
+	}
 }

@@ -1,4 +1,4 @@
-const swiper = new Swiper('.about__sliders', {
+const swiper = new Swiper('.slider__outer-wrap', {
 
 	direction: 'horizontal',
 	loop: true,
@@ -6,8 +6,8 @@ const swiper = new Swiper('.about__sliders', {
 	spaceBetween: 37,
 
 	navigation: {
-		nextEl: '.about__button-next',
-		prevEl: '.about__button-prev',
+		nextEl: '.slider__button-next',
+		prevEl: '.slider__button-prev',
 	},
 
 });

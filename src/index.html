@@ -18,30 +18,32 @@
 				<nav class="header__navigation navigation">
 					<ul class="header__list navigation__list">
 						<li class="header__item navigation__item">
-							<a href="" class="header__link navigation__link">Каталог</a>
-							<ul class="header__sublist">
-								<li class="header__subitem">
-									<a href="" class="header__sublink">Ёжики</a>
-								</li>
-								<li class="header__subitem">
-									<a href="" class="header__sublink">Питание</a>
-								</li>
-								<li class="header__subitem">
-									<a href="" class="header__sublink">переноски</a>
-								</li>
-								<li class="header__subitem">
-									<a href="" class="header__sublink">Лекарства</a>
-								</li>
-							</ul>
+							<a href="#" class="header__link navigation__link">Каталог</a>
+							<div class="header__submenu-wrap">
+								<ul class="header__sublist">
+									<li class="header__subitem">
+										<a href="#" class="header__s-link">Ёжики</a>
+									</li>
+									<li class="header__subitem">
+										<a href="#" class="header__s-link">Питание</a>
+									</li>
+									<li class="header__subitem">
+										<a href="#" class="header__s-link">переноски</a>
+									</li>
+									<li class="header__subitem">
+										<a href="#" class="header__s-link">Лекарства</a>
+									</li>
+								</ul>
+							</div>
 						</li>
 						<li class="header__item navigation__item">
-							<a href="" class="header__link navigation__link">о нас</a>
+							<a href="#" class="header__link navigation__link">о нас</a>
 						</li>
 						<li class="header__item navigation__item">
-							<a href="" class="header__link navigation__link">контакты</a>
+							<a href="#" class="header__link navigation__link">контакты</a>
 						</li>
 						<li class="header__item navigation__item">
-							<a href="" class="header__link navigation__link">галерея</a>
+							<a href="#" class="header__link navigation__link">галерея</a>
 						</li>
 					</ul>
 				</nav>
@@ -59,7 +61,7 @@
 					<h2 class="info__subtitle">тоже любят молоко</h2>
 					<p class="info__content">Заведите себе ёжика. Он всегда выслушает, не будет мяукать в 5 утра и царапать вашу
 						мебель.</p>
-					<button type="button" class="info__buying">Купить ёжика</button>
+					<button type="button" class="info__buying"><span>Купить ёжика</span></button>
 				</div>
 			</div>
 		</section>
@@ -89,62 +91,63 @@
 				</li>
 			</ul>
 
-			<div class="about__sliders-wrap">
-				<div class="swiper about__sliders">
+			<div class="slider">
+				<div class="swiper slider__outer-wrap">
 
-					<div class="swiper-wrapper about__wrap">
+					<div class="swiper-wrapper slider__wrap">
 
-						<div class="swiper-slide about__slide about__slide_yellow">
-							<div class="about__slide-wrap">
-								<div class="about__info">
-									<p class="about__name">Ежик “Евгений”</p>
-									<p class="about__description">Очень любит сладости. Маленький сладкоежка=) Мы называем его так между
+						<div class="swiper-slide slider__slide slider__slide_yellow">
+							<div class="slider__slide-wrap">
+								<div class="slider__info">
+									<p class="slider__name">Ежик “Евгений”</p>
+									<p class="slider__description">Очень любит сладости. Маленький сладкоежка=) Мы называем его так между
 										собой. Ручной, любит внимаение </p>
-									<p class="about__old-price">3 000 ₽</p>
-									<p class="about__current-price">1 500 ₽</p>
+									<p class="slider__old-price">3 000 ₽</p>
+									<p class="slider__current-price">1 500 ₽</p>
 								</div>
-								<img class="about__photo" src="/images/Eugene.png" alt="">
-								<div class="about__tooltip">
-									<img class="about__tooltip-icon" src="/images/tooltip.svg" alt="">
-									<div class="about__tooltip-block">
-										<p class="about__tooltip-text">Привит</p>
-										<p class="about__tooltip-likes">1235</p>
+								<img class="slider__photo" src="/images/Eugene.png" alt="">
+								<div class="slider__tooltip">
+									<img class="slider__tooltip-icon" src="/images/tooltip.svg" alt="">
+									<div class="slider__tooltip-block">
+										<p class="slider__tooltip-text">Привит</p>
+										<p class="slider__tooltip-likes">1235</p>
 									</div>
 								</div>
-								<img class="about__add" src="/images/plus.svg" alt="">
+								<img class="slider__add" src="/images/plus.svg" alt="">
 							</div>
 						</div>
-						<div class="swiper-slide about__slide about__slide_light-green">
-							<div class="about__slide-wrap">
-								<div class="about__info">
-									<p class="about__name">Ежик “Максим”</p>
-									<p class="about__description">Немного игривый и задорный характер этого друга никого не оставит
+						<div class="swiper-slide slider__slide slider__slide_light-green">
+							<div class="slider__slide-wrap">
+								<div class="slider__info">
+									<p class="slider__name">Ежик “Максим”</p>
+									<p class="slider__description">Немного игривый и задорный характер этого друга никого не оставит
 										равнодушным!</p>
-									<p class="about__old-price">5 000 ₽</p>
-									<p class="about__current-price">2 500 ₽</p>
+									<p class="slider__old-price">5 000 ₽</p>
+									<p class="slider__current-price">2 500 ₽</p>
 								</div>
-								<img class="about__photo" src="/images/Maksim.png" alt="">
-								<div class="about__tooltip">
-									<img class="about__tooltip-icon" src="/images/tooltip.svg" alt="">
-									<div class="about__tooltip-block">
-										<p class="about__tooltip-text">Привит</p>
-										<p class="about__tooltip-likes">1235</p>
+								<img class="slider__photo" src="/images/Maksim.png" alt="">
+								<div class="slider__tooltip">
+									<img class="slider__tooltip-icon" src="/images/tooltip.svg" alt="">
+									<div class="slider__tooltip-block">
+										<p class="slider__tooltip-text">Привит</p>
+										<p class="slider__tooltip-likes">1235</p>
 									</div>
 								</div>
-								<img class="about__add" src="/images/plus.svg" alt="">
+								<img class="slider__add" src="/images/plus.svg" alt="">
 							</div>
 						</div>
 
 					</div>
 
 				</div>
-				<div class="swiper-button-prev about__button-prev"></div>
-				<div class="swiper-button-next about__button-next"></div>
+				<div class="swiper-button-prev slider__button-prev"></div>
+				<div class="swiper-button-next slider__button-next"></div>
 			</div>
 		</section>
+
 		<section class="apply">
 			<div class="container">
-				<form class="apply__form" action="">
+				<form class="apply__form" action="#">
 					<div class="apply__form-wrap">
 						<h2 class="apply__title">Заполните заявку и мы забронируем для Вас нового друга</h2>
 						<div class="apply__radio">
@@ -168,12 +171,12 @@
 									<label for="number-1" class="apply__number-label">Мне нужен 1-2 ёжика</label>
 								</div>
 								<div class="apply__number-wrap">
-									<input type="radio" id="number-2" name="number" class="apply__number-input">
-									<label for="number-2" class="apply__number-label">Мне нужны 3-4 ёжика</label>
-								</div>
-								<div class="apply__number-wrap">
 									<input type="radio" id="number-3" name="number" class="apply__number-input">
 									<label for="number-3" class="apply__number-label">Мне нужны 3 и более ёжиков</label>
+								</div>
+								<div class="apply__number-wrap">
+									<input type="radio" id="number-2" name="number" class="apply__number-input">
+									<label for="number-2" class="apply__number-label">Мне нужны 3-4 ёжика</label>
 								</div>
 								<div class="apply__number-wrap">
 									<input type="radio" id="number-4" name="number" class="apply__number-input">
@@ -192,7 +195,7 @@
 								class="apply__personal-input apply__input-text">
 						</div>
 					</div>
-					<button class="apply__buying">Купить ёжика</button>
+					<button class="apply__buying"><span>Купить ёжика</span></button>
 				</form>
 				<div class="apply__sale">
 					<p class="apply__rests">У наc осталось еще: 25 ёжиков</p>
@@ -208,16 +211,16 @@
 				<nav class="footer__navigation navigation">
 					<ul class="footer__list navigation__list">
 						<li class="navigation__item">
-							<a href="" class="navigation__link">Каталог</a>
+							<a href="#" class="navigation__link">Каталог</a>
 						</li>
 						<li class="navigation__item">
-							<a href="" class="navigation__link">о нас</a>
+							<a href="#" class="navigation__link">о нас</a>
 						</li>
 						<li class="navigation__item">
-							<a href="" class="navigation__link">контакты</a>
+							<a href="#" class="navigation__link">контакты</a>
 						</li>
 						<li class="navigation__item">
-							<a href="" class="navigation__link">галерея</a>
+							<a href="#" class="navigation__link">галерея</a>
 						</li>
 					</ul>
 				</nav>
@@ -233,7 +236,7 @@
 						</a>
 					</li>
 					<li class="footer__link">
-						<a class="footer__ref" href="">
+						<a class="footer__ref" href="#">
 							<img src="/images/footer_twitter.svg" alt="" class="footer__icon">
 						</a>
 					</li>
