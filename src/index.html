@@ -16,7 +16,10 @@
 			<div class="header__wrap">
 				<div class="header__burger-lines"></div>
 				<div class="header__burger-menu"></div>
-				<img class="header__logo" src="/images/Logo.svg" alt="Логотип">
+				<a href="#" class="header__logo">
+					<img class="header__logoimg" src="/images/Logo.svg" alt="Логотип">
+				</a>
+
 				<nav class="header__navigation navigation">
 					<ul class="header__list navigation__list">
 						<li class="header__item navigation__item">
@@ -124,7 +127,7 @@
 										<p class="slider__tooltip-likes">1235</p>
 									</div>
 								</div>
-								<img class="slider__add" src="/images/plus.svg" alt="">
+								<button type="button" class="slider__add"></button>
 							</div>
 						</div>
 						<div class="swiper-slide">
@@ -206,14 +209,15 @@
 								class="apply__personal-input apply__input-tel">
 							<input type="email" name="email" id="email" placeholder="Ваш e-mail"
 								class="apply__personal-input apply__input-email">
-							<input type="text" name="text" id="text" placeholder="Комментарий к заявке"
-								class="apply__personal-input apply__input-text">
+							<textarea type="text" name="text" id="text" placeholder="Комментарий к заявке"
+								class="apply__personal-input apply__input-text"></textarea>
 						</div>
 					</div>
 					<button class="apply__buying"><span>Купить ёжика</span></button>
 				</form>
 				<div class="apply__sale">
-					<p class="apply__rests">У наc осталось еще: 25 ёжиков</p>
+					<p class="apply__rests">У наc осталось еще: 
+						<a href="#">25 ёжиков</a> </p>
 					<p class="apply__sale-period">Торопитесь! Акция действует до 26. 02. 2023</p>
 				</div>
 			</div>
@@ -222,7 +226,9 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="footer__wrap">
-				<img src="/images/logo_white.svg" alt="" class="footer__logo">
+				<a href="#" class="footer__logo">
+					<img src="/images/logo_white.svg" alt="" class="footer__logo-img">
+				</a>
 				<nav class="footer__navigation navigation">
 					<ul class="footer__list navigation__list">
 						<li class="navigation__item">

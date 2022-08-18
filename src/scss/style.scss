@@ -371,20 +371,41 @@
 
 	&__slide {
 		max-width: 570px;
-    width: 100%;
+		width: 100%;
+		height: 397px;
 		border-radius: 25px;
 		background-size: cover;
 		background-repeat: no-repeat;
 		position: relative;
 		padding: 54px 0 58px 59px;
 
-		&_yellow {
+		&_yellow::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
 			background-image: url(/images/Subtract_yellow.png);
+			background-size: contain;
+			background-repeat: no-repeat;
 			
 		}
 
-		&_light-green {
+		&_light-green::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
 			background-image: url(/images/Subtract_green.png);
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 	}
 
@@ -422,9 +443,9 @@
 	}
 
 	&__photo-wrap {
-		max-width: 363px;
-		width: 100%;
-		height: 263px;
+		// max-width: 363px;
+		// width: 100%;
+		// height: 263px;
 		align-self: flex-end;
 	}
 
@@ -505,9 +526,11 @@
 	}
 
 	&__add {
+		background-image: url(/images/plus.svg);
 		position: absolute;
 		bottom: 2%;
 		right: 2%;
+		cursor: pointer;
 	}
 
 	&__button-prev::after {
@@ -531,7 +554,7 @@
 	&__form {
 		max-width: 1197px;
 		width: 100%;
-		height: 484px;
+		// height: 484px;
 		background-color: var(--background-form);
 		margin: 0 auto 95px;
 		border-radius: 30px;
@@ -729,6 +752,12 @@
 		padding-left: 50px;
 	}
 
+	&__rests a { 
+		font-size: 24px;
+		color: var(--main-text);
+		text-decoration: underline;
+	}
+
 	&__rests::before {
 		content: '';
 		background-image: url(/images/footer_hedgehog.svg);
@@ -866,10 +895,7 @@
 	}
 }
 
-@media (max-width: 1024px) {
-	
-
-}
+@media (max-width: 1024px) {}
 
 // @media (max-width: 320px) {
 // 	.header {
