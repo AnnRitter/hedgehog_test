@@ -59,7 +59,10 @@
 		height: 14px;
 	}
 
-	&__burger-lines,
+	&__burger-lines {
+		display: none;
+	}
+
 	&__burger-menu {
 		display: none;
 	}
@@ -94,7 +97,7 @@
 		border-bottom: 1px solid var(--main-text);
 	}
 
-	&__item:first-child:hover &__sublist {
+	&__item:first-child:hover &__submenu-wrap {
 		visibility: visible;
 	}
 
@@ -106,7 +109,8 @@
 	&__submenu-wrap {
 		padding-top: 10px;
 		position: absolute;
-		transform: translate(-17px, 7px);
+		transform: translateX(-17px);
+		visibility: hidden;
 	}
 
 	&__sublist {
@@ -114,7 +118,7 @@
 		background-color: var(--white);
 		border-radius: 8px;
 		box-shadow: 4px 4px 20px 0 var(--light-grey);
-		visibility: hidden;
+		
 	}
 
 	&__subitem:not(:last-child) {
@@ -171,6 +175,71 @@
 		cursor: pointer;
 	}
 
+}
+
+.overlay {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.5); 
+	z-index: 4;
+	display: none;
+}
+
+.burger {	
+	max-width: 301px;
+	width: 100%;
+	background-color: var(--white);
+	border-radius: 0 20px 20px 0;
+	padding: 17px 67px 43px 26px;
+	position: absolute;
+	top: 10%;
+	left: 0;
+	z-index: 10;
+
+&__wrap {
+	display: flex;
+	margin-bottom: 56px;
+}
+
+&__cross {
+	background-image: url(/images/x.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 19px;
+	height: 19px;
+	margin-right: 87px;
+}
+
+&__logo {
+	background-image: url(/images/Logo.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 56px;
+	height: 26px;
+}
+
+&__navigation {
+	margin-bottom: 161px;
+}
+
+&__item {
+	margin-bottom: 20px;
+}
+
+&__link {
+	text-transform: uppercase;
+	color: var(--main-text);
+	font-size: 18px;
+}
+
+&__phone-link {
+	font-family: sans-serif;
+	font-size: 22px;
+	font-weight: 500;
+	color: var(--main-text);
+}
 }
 
 .info {
@@ -362,29 +431,70 @@
 	margin: 0 auto 84px;
 	position: relative;
 
-
 	&__outer-wrap {
 		max-width: 1184px;
 		width: 100%;
+		padding-top: 20px;
 	}
 
+	.swiper-slide {
+		height: auto;
+	}
 
 	&__slide {
 		max-width: 570px;
-    width: 100%;
+		width: 100%;
+		height: 100%;
 		border-radius: 25px;
 		background-size: cover;
 		background-repeat: no-repeat;
 		position: relative;
 		padding: 54px 0 58px 59px;
+		margin: 0 auto;
 
-		&_yellow {
-			background-image: url(/images/Subtract_yellow.png);
-			
+		&::after {
+			content: ' -50 %';
+			font-family: sans-serif;
+			font-size: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 68px;
+			height: 36px;
+			position: absolute;
+			top: -4%;
+			left: 10%;
+			background-color: var(--dark-green);
+			color: var(--white);
+
 		}
 
-		&_light-green {
-			background-image: url(/images/Subtract_green.png);
+		&_yellow::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			background-color: var(--yellow);
+			border-radius: 20px;
+			clip-path: polygon(100% 0, 100% 80%, 85% 100%, 0 100%, 0 0);
+		}
+
+		&_light-green::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			background-color: var(--light-green);
+			border-radius: 20px;
+			clip-path: polygon(100% 0, 100% 80%, 85% 100%, 0 100%, 0 0);
 		}
 	}
 
@@ -422,9 +532,9 @@
 	}
 
 	&__photo-wrap {
-		max-width: 363px;
-		width: 100%;
-		height: 263px;
+		// max-width: 363px;
+		// width: 100%;
+		// height: 263px;
 		align-self: flex-end;
 	}
 
@@ -483,6 +593,8 @@
 	&__tooltip-text::before {
 		content: '';
 		background-image: url(/images/solid.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
 		width: 26px;
 		height: 26px;
 		position: absolute;
@@ -493,6 +605,8 @@
 	&__tooltip-likes::before {
 		content: '';
 		background-image: url(/images/like.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
 		width: 22px;
 		height: 22px;
 		position: absolute;
@@ -505,9 +619,13 @@
 	}
 
 	&__add {
+		width: 40px;
+		height: 40px;
+		background-image: url(/images/plus.svg);
 		position: absolute;
-		bottom: 2%;
-		right: 2%;
+		bottom: 0;
+		right: 0;
+		cursor: pointer;
 	}
 
 	&__button-prev::after {
@@ -531,7 +649,7 @@
 	&__form {
 		max-width: 1197px;
 		width: 100%;
-		height: 484px;
+		// height: 484px;
 		background-color: var(--background-form);
 		margin: 0 auto 95px;
 		border-radius: 30px;
@@ -729,6 +847,12 @@
 		padding-left: 50px;
 	}
 
+	&__rests a {
+		font-size: 24px;
+		color: var(--main-text);
+		text-decoration: underline;
+	}
+
 	&__rests::before {
 		content: '';
 		background-image: url(/images/footer_hedgehog.svg);
@@ -835,6 +959,9 @@
 	overflow: hidden;
 }
 
+.active {
+	display: block;
+}
 @media (max-width: 1440px) {
 
 	.header {
@@ -866,65 +993,384 @@
 	}
 }
 
-@media (max-width: 1024px) {
-	
+@media (max-width: 1280px) {
+	.info {
+		padding: 190px 0 390px;
 
+		&__title {
+			max-width: 350px;
+		}
+
+		&__subtitle {
+			font-size: 30px;
+		}
+	}
+
+	.about {
+		&::before {
+			display: none;
+		}
+	}
+
+	.slider {
+		padding: 20px 40px 0;
+	}
+
+	.footer {
+		&__list {
+			display: block;
+
+		}
+	}
 }
 
-// @media (max-width: 320px) {
-// 	.header {
+
+@media (max-width: 991px) {
+	.header {
+		padding-top: 20px;
+
+		&__wrap {
+			justify-content: center;
+		}
+
+		&__navigation {
+			display: none;
+		}
+
+		&__burger-lines {
+			display: block;
+		}
+
+		&__logo {
+			margin-right: 35px;
+			margin-left: auto;
+		}
+	}
+
+	.info {
+		&::before {
+			display: none;
+		}
+	}
 
 
-// 		&__logo {
-// 			width: 56px;
-// 			height: 26px;
-// 		}
+	.slider {
+		margin-bottom: 54px;
 
-// 		&__phone {
-// 			display: block;
-// 		}
+		&__slide {
+			max-width: 350px;
+			padding: 44px 0 30px 29px;
 
-// 		&__phone-logo {
-// 			width: 35px;
-// 			height: 35px;
-// 			margin-right: 13px;
-// 		}
+			&::after {
+				width: 48px;
+				height: 21px;
+				font-size: 12px;
+				top: -2%;
+			}
+		}
 
-// 		&__phone-logo::before {
-// 			width: 13px;
-// 			height: 11px;
-// 		}
+		&__name {
+			font-size: 30px;
+		}
 
-// 		&__list,
-// 		&__phone-link {
-// 			display: none;
-// 		}
+		&__description {
+			font-size: 11px;
+			width: 114px;
+		}
 
-// 		&__cart {
-// 			width: 32px;
-// 			height: 26px;
-// 		}
+		&__photo {
+			width: 120%;
+		}
 
-// 		&__burger-lines,
-// 		&__burger-menu {
-// 			display: block;
-// 		}
+		&__tooltip-icon {
+			display: none;
+		}
 
+		&__tooltip-text,
+		&__tooltip-likes {
+			color: var(--main-text);
+			font-size: 10px;
+		}
 
-// 	}
+		&__tooltip-text {
+			padding-left: 12px;
+			margin-right: 27px;
+		}
 
-// 	.info {
-// 		background-image: url(/images/Subtract_small.jpg);
-// 		height: 406px;
+		&__tooltip-text::before {
+			background-image: url(/images/syringe_dark.svg);
+			width: 12px;
+			height: 12px;
+			top: 0;
+		}
 
-// 		&::before,
-// 		&::after {
-// 			display: none;
-// 		}
+		&__tooltip-likes::before {
+			background-image: url(/images/heart_dark.svg);
+			width: 10px;
+			height: 10px;
+			top: 0;
+			left: -65%;
+		}
 
-// 		&__title {
-// 			width: 202px;
-// 			height: 44px;
-// 		}
-// 	}
-// }
+		&__tooltip-block {
+			visibility: visible;
+			max-width: none;
+			height: auto;
+			background-color: transparent;
+			justify-content: flex-end;
+			top: 5%;
+			right: 5%;
+
+			&::before {
+				display: none;
+			}
+		}
+
+		&__add {
+			right: -7%;
+		}
+
+		&__button-prev,
+		&__button-next {
+			display: none;
+		}
+	}
+
+	.about {
+
+		&::after {
+			width: 66vw;
+		}
+
+		&__list {
+			display: grid;
+			grid-template-areas:
+				'item1 .'
+				'item2 item3';
+			row-gap: 35px;
+			top: -175px;
+		}
+
+		&__item-1 {
+			grid-area: item1;
+		}
+
+		&__item-2 {
+			grid-area: item2;
+		}
+
+		&__item-3 {
+			grid-area: item3;
+		}
+
+		&__item:nth-child(2) {
+			top: 0;
+		}
+	}
+
+	.apply {
+
+		&__form-wrap {
+			padding: 39px 50px 25px;
+		}
+
+		&__form {
+			border-radius: 0;
+			padding-bottom: 39px;
+		}
+
+		&__title {
+			font-size: 24px;
+			text-align: start;
+		}
+
+		&__radio {
+			display: block;
+		}
+
+		&__target {
+			display: block;
+			margin-right: 0;
+			margin-bottom: 30px;
+		}
+
+		&__target-wrap {
+			margin-bottom: 16px;
+		}
+
+		&__number {
+			display: block;
+		}
+
+		&__number-wrap {
+			margin-bottom: 14px;
+		}
+
+		&__personal-data {
+			display: block;
+		}
+
+		&__personal-input:not(:last-child) {
+			max-width: 100%;
+		}
+
+		&__personal-input:last-child {
+			height: auto;
+		}
+
+		&__personal-input {
+			margin-bottom: 10px;
+		}
+
+		&__buying {
+			position: static;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+
+	.footer {
+		&__wrap {
+			display: block;
+			position: relative;
+		}
+
+		&__logo-img {
+			margin-bottom: 62px;
+		}
+
+		&__item {
+			margin-bottom: 30px;
+		}
+
+		&__links {
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 0;
+		}
+
+		&__link {
+			margin-bottom: 12px;
+		}
+
+		&__rights {
+			font-size: 11px;
+		}
+	}
+}
+
+@media (max-width: 545px) {
+	.header {
+		&__logo-img {
+			width: 56px;
+			height: 26px;
+		}
+
+		&__phone-logo {
+			width: 35px;
+			height: 35px;
+
+			&::before {
+				width: 13px;
+				height: 11px;
+			}
+		}
+	}
+
+	.info {
+		padding: 83px 0 130px;
+		background-image: url(/images/Subtract_small.jpg);
+		&::after {
+			top: 50%;
+		}
+
+		&__wrap {
+			text-align: start;
+		}
+
+		&__title {
+			max-width: 202px;
+			margin: 0 0 12px;
+
+		}
+
+		&__subtitle {
+			font-size: 24px;
+		}
+
+		&__content {
+			font-size: 12px;
+		}
+	}
+
+	.about {
+
+		&::after {
+			top: -14%;
+			width: 90vw;
+		}
+
+		&__list {
+			top: -70px;
+		}
+		&__item {
+			max-width: 110px;
+		}
+
+		&__picture {
+			max-width: 92px;
+			height: 92px;
+		}
+
+		&__content {
+			font-size: 10px;
+			text-align: start;
+		}
+
+		&__svg {
+			width: 43px;
+			height: 43px;
+		}
+	}
+
+	.slider {
+		padding: 0;
+		&__slide {
+			max-width: 243px;
+		}
+
+		&__photo {
+			width: 150%;
+		}
+	}
+
+	.apply {
+
+		&__buying {
+			max-width: 280px;
+			left: 3%;
+		}
+
+		&__sale {
+			margin: 0;
+			padding-left: 21px;
+			max-width: 236px;
+			text-align: start;
+		}
+
+		&__rests {
+			padding-left: 0;
+
+			&::before {
+				top: -60%;
+			}
+		}
+
+		&__sale-period {
+			margin: 0;
+		}
+
+	}
+}
