@@ -171,7 +171,7 @@ textarea {
 }
 
 .header__burger-lines {
-  background-image: url(/images/burger.svg);
+  background-image: url("../images/burger.svg");
   width: 25px;
   height: 14px;
 }
@@ -199,7 +199,7 @@ textarea {
   position: absolute;
   top: 15%;
   left: -20%;
-  background-image: url(/images/triangle_right.svg);
+  background-image: url("../images/triangle_right.svg");
   width: 10px;
   height: 10px;
   -webkit-transition: all 0.3s ease;
@@ -280,7 +280,7 @@ textarea {
 .header__phone-logo::before {
   content: "";
   display: block;
-  background-image: url(/images/phone.svg);
+  background-image: url("../images/phone.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 32px;
@@ -299,7 +299,7 @@ textarea {
 }
 
 .header__cart {
-  background-image: url(/images/basket.svg);
+  background-image: url("../images/basket.svg");
   background-repeat: no-repeat;
   background-size: contain;
   width: 36px;
@@ -337,7 +337,7 @@ textarea {
 }
 
 .burger__cross {
-  background-image: url(/images/x.svg);
+  background-image: url("../images/x.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 19px;
@@ -346,7 +346,7 @@ textarea {
 }
 
 .burger__logo {
-  background-image: url(/images/Logo.svg);
+  background-image: url("../images/Logo.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 56px;
@@ -375,7 +375,7 @@ textarea {
 }
 
 .info {
-  background-image: url(/images/Subtract.jpg);
+  background-image: url("../images/Subtract.jpg");
   width: 100%;
   height: auto;
   background-repeat: no-repeat;
@@ -387,7 +387,7 @@ textarea {
 
 .info::before {
   content: "";
-  background-image: url(/images/Ellipse_header_1.svg);
+  background-image: url("../images/Ellipse_header_1.svg");
   max-width: 524px;
   width: 100%;
   height: 524px;
@@ -399,7 +399,7 @@ textarea {
 
 .info::after {
   content: "";
-  background-image: url(/images/Ellipse_header_2.svg);
+  background-image: url("../images/Ellipse_header_2.svg");
   max-width: 791px;
   width: 100%;
   height: 1500px;
@@ -490,7 +490,7 @@ textarea {
 
 .about::before {
   content: "";
-  background-image: url(/images/hedgehog_left.png);
+  background-image: url("../images/hedgehog_left.png");
   background-size: contain;
   background-repeat: no-repeat;
   width: 20vw;
@@ -501,7 +501,7 @@ textarea {
 
 .about::after {
   content: "";
-  background-image: url(/images/hedgehog_right.png);
+  background-image: url("../images/hedgehog_right.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: right;
@@ -765,7 +765,7 @@ textarea {
 
 .slider__tooltip-text::before {
   content: "";
-  background-image: url(/images/solid.svg);
+  background-image: url("../images/solid.svg");
   background-repeat: no-repeat;
   background-size: contain;
   width: 26px;
@@ -777,7 +777,7 @@ textarea {
 
 .slider__tooltip-likes::before {
   content: "";
-  background-image: url(/images/like.svg);
+  background-image: url("../images/like.svg");
   background-repeat: no-repeat;
   background-size: contain;
   width: 22px;
@@ -794,7 +794,7 @@ textarea {
 .slider__add {
   width: 40px;
   height: 40px;
-  background-image: url(/images/plus.svg);
+  background-image: url("../images/plus.svg");
   position: absolute;
   bottom: 0;
   right: 0;
@@ -803,14 +803,14 @@ textarea {
 
 .slider__button-prev::after {
   content: "";
-  background-image: url(/images/arrow_left.svg);
+  background-image: url("../images/arrow_left.svg");
   width: 24px;
   height: 24px;
 }
 
 .slider__button-next::after {
   content: "";
-  background-image: url(/images/arrow_right.svg);
+  background-image: url("../images/arrow_right.svg");
   width: 24px;
   height: 24px;
 }
@@ -928,7 +928,7 @@ textarea {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(/images/radio_checked.svg);
+  background-image: url("../images/radio_checked.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 14px;
@@ -1092,7 +1092,7 @@ textarea {
 
 .apply__rests::before {
   content: "";
-  background-image: url(/images/footer_hedgehog.svg);
+  background-image: url("../images/footer_hedgehog.svg");
   background-size: cover;
   width: 41px;
   height: 41px;
@@ -1331,14 +1331,14 @@ textarea {
   }
 
   .slider__tooltip-text::before {
-    background-image: url(/images/syringe_dark.svg);
+    background-image: url("../images/syringe_dark.svg");
     width: 12px;
     height: 12px;
     top: 0;
   }
 
   .slider__tooltip-likes::before {
-    background-image: url(/images/heart_dark.svg);
+    background-image: url("../images/heart_dark.svg");
     width: 10px;
     height: 10px;
     top: 0;
@@ -1522,7 +1522,7 @@ textarea {
 
   .info {
     padding: 83px 0 130px;
-    background-image: url(/images/Subtract_small.jpg);
+    background-image: url("../images/Subtract_small.jpg");
   }
 
   .info::after {
