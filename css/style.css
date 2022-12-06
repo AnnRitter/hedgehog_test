@@ -505,7 +505,7 @@ textarea {
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: right;
-  width: 20vw;
+  width: 400px;
   height: 346px;
   position: absolute;
   top: -47%;
@@ -1249,6 +1249,10 @@ textarea {
     display: none;
   }
 
+  .about::after {
+    width: 300px;
+  }
+
   .slider {
     padding: 20px 40px 0;
   }
@@ -1284,6 +1288,10 @@ textarea {
 
   .info::before {
     display: none;
+  }
+
+  .info__title {
+    max-width: 320px;
   }
 
   .slider {
@@ -1371,7 +1379,7 @@ textarea {
   }
 
   .about::after {
-    width: 66vw;
+    width: 400px;
   }
 
   .about__list {
@@ -1504,7 +1512,37 @@ textarea {
   }
 }
 
-@media (max-width: 545px) {
+@media (max-width: 560px) {
+  .about::after {
+    width: 300px;
+  }
+
+  .about__list {
+    top: -90px;
+  }
+
+  .about__picture {
+    max-width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+  }
+
+  .about__title {
+    font-size: 14px;
+  }
+
+  .about__content {
+    font-size: 12px;
+  }
+
+  .slider {
+    padding: 0;
+    top: 80px;
+    margin-bottom: 100px;
+  }
+}
+
+@media (max-width: 320px) {
   .header__logo-img {
     width: 56px;
     height: 26px;
@@ -1548,11 +1586,7 @@ textarea {
 
   .about::after {
     top: -14%;
-    width: 90vw;
-  }
-
-  .about__list {
-    top: -70px;
+    width: 250px;
   }
 
   .about__item {
